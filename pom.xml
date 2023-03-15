@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.mrsamudio</groupId>
 	<artifactId>apidoclinks</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.3</version>
 	<name>API Documentation Links</name>
 	<description>Get an Official APi documentation link from a certain Class</description>
 	<url>https://github.com/mrsamudio/apidoclinks</url>
@@ -33,9 +33,9 @@
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<aem-sdk-api>2023.2.11289.20230224T170559Z-230100</aem-sdk-api>
-		<core.wcm.components.version>2.22.0</core.wcm.components.version>
-		<uber.jar.version>6.5.15</uber.jar.version>
+		<aem-sdk-api>[2022.5.7493.20220524T082827Z-220401,)</aem-sdk-api>
+		<core.wcm.components.version>[2.19.0,)</core.wcm.components.version>
+		<uber.jar.version>[6.5.13,)</uber.jar.version>
 	</properties>
 	<!-- <dependencyManagement> -->
 	<dependencies>
@@ -105,6 +105,16 @@
 			</plugins>
 		</pluginManagement>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>4.4.1</version>
+				<configuration>
+					<instructions>
+						<Export-Package>io.github.mrsamudio.*</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>

@@ -3,6 +3,11 @@ package io.github.mrsamudio;
 import java.util.HashMap;
 import java.util.Set;
 
+/**
+ * ApiDocLinks class
+ * @author mikodev
+ *
+ */
 public class ApiDocLinks {
 	
 	private static final String JAVA11_DOMAIN = "https://docs.oracle.com/en/java/javase/11/docs/api/";
@@ -11,11 +16,21 @@ public class ApiDocLinks {
 
 	private static final HashMap<Class<? extends Throwable>, String> EXCEPTIONURLS = fillGreatHash();
 
+	/**
+	 * Get a url official api doc
+	 * @param exceptionClass the exception class
+	 * @return string url
+	 */
 	public static final String getUrl(Class<? extends Throwable> exceptionClass) {
 		HashMap<Class<? extends Throwable>, String> exceptionUrls = fillGreatHash();
 		return exceptionUrls.get(exceptionClass);
 	}
 
+	/**
+	 * Just print info or related class with url offical api doc
+	 * @param exceptionClass the exception class
+	 * @return true or false depends on
+	 */
 	public static final boolean printInfo(Class<? extends Throwable> exceptionClass) {
 		if (!EXCEPTIONURLS.get(exceptionClass).isEmpty()) {
 			System.out.println("Nombre de Clase: " + exceptionClass.getName());
@@ -28,11 +43,20 @@ public class ApiDocLinks {
 		}
 	}
 
+	/**
+	 * Get a url official aem api doc
+	 * @param exceptionClass the exception class
+	 * @return String aem url
+	 */
 	public static final String getAEMUrl(Class<? extends Throwable> exceptionClass) {
 		HashMap<Class<? extends Throwable>, String> exceptionUrls = fillAEMHash();
 		return exceptionUrls.get(exceptionClass);
 	}
 	
+	/**
+	 *  fillGreatHash
+	 * @return hashMap with all urls api docs
+	 */
 	private static final HashMap<Class<? extends Throwable>, String> fillGreatHash() {
 		HashMap<Class<? extends Throwable>, String> urls = new HashMap<>();
 		urls.putAll(fillJavaHash());
@@ -41,10 +65,18 @@ public class ApiDocLinks {
 		return urls;
 	}
 	
+	/**
+	 * getKeySet
+	 * @return Set of keys
+	 */
 	public static final Set<Class<? extends Throwable>> getKeySet() {
 		return EXCEPTIONURLS.keySet();
 	}
 	
+	/**
+	 * fillJavaHash
+	 * @return hashMap with java urls api docs
+	 */
 	private static final HashMap<Class<? extends Throwable>, String> fillJavaHash() {
 		HashMap<Class<? extends Throwable>, String> urls = new HashMap<>();
 		urls.put(java.io.CharConversionException.class,
@@ -799,6 +831,10 @@ public class ApiDocLinks {
 		return urls;
 	}
 
+	/**
+	 * fillAEMHash
+	 * @return hashMap with AEM urls api docs
+	 */
 	private static final HashMap<Class<? extends Throwable>, String> fillAEMHash() {
 		HashMap<Class<? extends Throwable>, String> urls = new HashMap<>();
 		

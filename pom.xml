@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.github.mrsamudio</groupId>
 	<artifactId>apidoclinks</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 	<name>API Documentation Links</name>
 	<description>Get an Official APi documentation link from a certain Class</description>
 	<url>https://github.com/mrsamudio/apidoclinks</url>
@@ -33,11 +33,7 @@
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<aem-sdk-api>[2022.5.7493.20220524T082827Z-220401,)</aem-sdk-api>
-		<core.wcm.components.version>[2.19.0,)</core.wcm.components.version>
-		<uber.jar.version>[6.5.13,)</uber.jar.version>
 	</properties>
-	<!-- <dependencyManagement> -->
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 		<dependency>
@@ -46,42 +42,7 @@
 			<version>5.9.2</version>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.adobe.aem/aem-sdk-api -->
-		<dependency>
-			<groupId>com.adobe.aem</groupId>
-			<artifactId>aem-sdk-api</artifactId>
-			<version>${aem-sdk-api}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.adobe.cq/core.wcm.components.core -->
-		<dependency>
-			<groupId>com.adobe.cq</groupId>
-			<artifactId>core.wcm.components.core</artifactId>
-			<version>${core.wcm.components.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.adobe.cq/core.wcm.components.content -->
-		<!--		<dependency>
-			<groupId>com.adobe.cq</groupId>
-			<artifactId>core.wcm.components.content</artifactId>
-			<version>${core.wcm.components.version}</version>
-			<scope>provided</scope>
-		</dependency> -->
-		<!-- https://mvnrepository.com/artifact/com.adobe.cq/core.wcm.components.config -->
-		<!-- <dependency>
-			<groupId>com.adobe.cq</groupId>
-			<artifactId>core.wcm.components.config</artifactId>
-			<version>${core.wcm.components.version}</version>
-			<scope>provided</scope>
-		</dependency>-->
-		<!-- https://mvnrepository.com/artifact/com.adobe.aem/uber-jar -->
-		<dependency>
-			<groupId>com.adobe.aem</groupId>
-			<artifactId>uber-jar</artifactId>
-			<version>${uber.jar.version}</version>
-			<scope>provided</scope>
-		</dependency>
 	</dependencies>
-	<!-- </dependencyManagement> -->
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>

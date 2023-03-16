@@ -2,8 +2,6 @@ package io.github.mrsamudio.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.beans.IntrospectionException;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -33,7 +31,7 @@ class ApiDocLinksTest {
 	@Test
 	void test() {
 		try {
-			throw new IntrospectionException(null);
+			throw new Exception();
 		} catch (Exception e) {
 			boolean res = ApiDocLinks.printInfo(e.getClass());
 			assertEquals(true, res, "");
